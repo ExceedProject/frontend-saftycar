@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
       <nav>
           <h1><AiFillCar /> SAFETYCAR - EXCEED16<AiFillCar /></h1>
-          <Link to="/Home"><h3><AiFillHome /> Home</h3></Link>
+          <Link to="/"><h3><AiFillHome /> Home</h3></Link>
       </nav>
   )
 }
