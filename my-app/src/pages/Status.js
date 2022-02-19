@@ -9,18 +9,14 @@ const Status = ()=>  {
 
     useEffect(() => {
         const id = setInterval(() => {
-            let list_data = []
             getStatusdata().then((data) =>{
                 setStatusdata(data)
                 console.log(data)
-                list_data.add(data)
             })
             getSafecheck().then((data) =>{
                 console.log(data)
-                list_data.add(data)
-                
+                setSafechaeck(data)
             })
-            setSafechaeck(list_data)
         
         }, 3000);
         return () => {
