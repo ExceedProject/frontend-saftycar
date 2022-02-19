@@ -8,9 +8,13 @@ const Graph = () => {
 
   const [graphData, setGraphData] = useState([]);
   useEffect(() => {
-    getData().then((data) => {
-      setGraphData(data)
-    },3000)
+    const interval = setInterval(() => {
+      getData().then((data) => {
+        setGraphData(data)
+      }).catch(console.log)
+    }, 3000);
+    return () => clearInterval(interval);
+ 
   }, [])
   
   // console.log(graphData)
