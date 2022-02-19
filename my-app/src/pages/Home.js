@@ -43,7 +43,7 @@ const Home = () => {
      
 
       <div className='carbon-graph'>
-        <div className='carbon-label'>Carbon and Heat Monoxide Graph</div>
+        <div className='carbon-label'>Carbon Monoxide and Heat Graph</div>
        
         <LineChart width={500} height={300} data={graphData}> 
         <XAxis
