@@ -40,18 +40,27 @@ async function getSafecheck(){
 // console.log(Statusdata);
 console.log("this = ", Safecheck)
   return (
-    <div>
-        <div className="upper">   
+    <div  style={{display:'flex',alignItems:'center',justifyContent:'center'}}>
+        <img src={ "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.forbes.com%2Fsites%2Fjimgorzelany%2F2019%2F07%2F23%2Fhere-are-the-coolest-new-cars-for-2020%2F&psig=AOvVaw2Jg2gOfHVq5D2QfRWmsQA-&ust=1645354916764000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCOCB9-3Oi_YCFQAAAAAdAAAAABAJ" }/>
+        <div className="upper" style={{marginLeft:20}}>   
         <h1>Status</h1>
         <div className="showstatus">
-        <h1>CO :</h1><div className="circle" style={{backgroundColor: Statusdata["carbon_color"]}}>  b </div>
-        <h1>Heat :</h1><div className="circle" style={{backgroundColor: Statusdata["heat_color"]}}>    b  </div>
-        <h1>Motion Detect :</h1><div className="circle" style={{backgroundColor: Statusdata["sensor_color"]}}> b </div>
+            <div style={{display:'flex',alignItems:'center',justifyContent:'flex-start'}}>
+            <h1>CO :</h1><div className="circle" style={{backgroundColor: Statusdata["carbon_color"],width:20,height:20,borderRadius:'50%'}}/>  
+            </div>
+            <div style={{display:'flex',alignItems:'center',justifyContent:'flex-start'}}>
+        <h1>Heat :</h1><div className="circle" style={{backgroundColor: Statusdata["heat_color"],width:20,height:20,borderRadius:'50%'}}/>
+      </div>
+        <div style={{display:'flex',alignItems:'center',justifyContent:'flex-start'}}>
+        <h1>Motion Detect :</h1><div className="circle" style={{backgroundColor: Statusdata["sensor_color"],width:20,height:20,borderRadius:'50%'}}/>
+ </div>
+ <div style={{display:'flex',alignItems:'center',justifyContent:'flex-start'}}>
+        <h1>Safe: </h1><div className="circle" style={{backgroundColor: Safecheck["warning_color"],width:20,height:20,borderRadius:'50%'}}/>
+        </div>
     </div>
         </div>
-        <div className="lower">
-        <h1>Safe: </h1><div className="circle" style={{backgroundColor: Safecheck["warning_color"]}}> b </div>
-        </div>
+
+
     </div>
   )
 }
