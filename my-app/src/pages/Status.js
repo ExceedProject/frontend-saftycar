@@ -1,6 +1,15 @@
 import React, { useEffect, useState} from 'react'
 import axios from 'axios'
-    
+import { Slide } from 'react-slideshow-image';
+import HW1 from "../assets/images/hardware1.jpg"
+import HW2 from "../assets/images/hardware2.jpg"
+import HW3 from "../assets/images/hardware3.jpg"
+import HW4 from "../assets/images/hardware4.jpg"
+import HW5 from "../assets/images/hardware5.jpg"
+import HW6 from "../assets/images/hardware6.jpg"
+import HW7 from "../assets/images/hardware7.jpg"
+import 'react-slideshow-image/dist/styles.css'
+
 const Status = ()=>  {
 
     const [Statusdata,setStatusdata] = useState([])
@@ -32,25 +41,44 @@ const Status = ()=>  {
         }
     }, [Safecheck?.warning])
 
+    const slideImages = [
+        HW1, 
+        HW2, 
+        HW3,
+        HW4,
+        HW5,
+        HW6,
+        HW7
+      ];
 
-async function getStatusdata(){
-    const res = await axios.get('https://ecourse.cpe.ku.ac.th/exceed16/api/safety-car/status')
-    return res.data;
-}
+    async function getStatusdata(){
+        const res = await axios.get('https://ecourse.cpe.ku.ac.th/exceed16/api/safety-car/status')
+        return res.data;
+    }
 
-async function getSafecheck(){
-    const res = await axios.get('https://ecourse.cpe.ku.ac.th/exceed16/api/safety-car/warning')
-    return res.data;
-}
+    async function getSafecheck(){
+        const res = await axios.get('https://ecourse.cpe.ku.ac.th/exceed16/api/safety-car/warning')
+        return res.data;
+    }
 
 
 
 // console.log(Statusdata);
-console.log("this = ", Safecheck)
   return (
-    <div  style={{display:'flex',alignItems:'center',justifyContent:'center',padding:150}}>
-        <img src={ "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.forbes.com%2Fsites%2Fjimgorzelany%2F2019%2F07%2F23%2Fhere-are-the-coolest-new-cars-for-2020%2F&psig=AOvVaw2Jg2gOfHVq5D2QfRWmsQA-&ust=1645354916764000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCOCB9-3Oi_YCFQAAAAAdAAAAABAJ" }/>
-        <div className="upper" style={{marginLeft:20}}>   
+    <div  style={{display:'flex',alignItems:'center',justifyContent:'center', padding:60}}>
+        <div style={{width:450}}>
+        <Slide easing="ease">
+            {slideImages.map((item,index)=>  
+            <div className="each-slide" key={index}>
+            <div style={{'backgroundImage': `url(${item})`}}>
+            </div>
+          </div>)}
+
+          
+        </Slide>
+      </div>
+
+ <      div className="upper" style={{marginLeft:200}}>   
             <h1>Status</h1>
             <div className="showstatus">
                 <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
@@ -69,7 +97,7 @@ console.log("this = ", Safecheck)
     </div>
 
 
-    </div>
+    </div> 
   )
 }
 

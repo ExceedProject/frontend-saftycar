@@ -4,6 +4,15 @@ import axios from "axios"
 import { LineChart, Line, XAxis, YAxis, CartesianGrid } from 'recharts'
 import moment from 'moment'
 import { Link } from 'react-router-dom'
+import HW1 from "../assets/images/hardware1.jpg"
+import HW2 from "../assets/images/hardware2.jpg"
+import HW3 from "../assets/images/hardware3.jpg"
+import HW4 from "../assets/images/hardware4.jpg"
+import HW5 from "../assets/images/hardware5.jpg"
+import HW6 from "../assets/images/hardware6.jpg"
+import HW7 from "../assets/images/hardware7.jpg"
+import 'react-slideshow-image/dist/styles.css'
+import { Slide } from 'react-slideshow-image';
 
 const Home = () => {
   
@@ -27,12 +36,36 @@ const Home = () => {
       return res.data
     }
 
+    const slideImages = [
+      HW1, 
+      HW2, 
+      HW3, 
+      HW4, 
+      HW5, 
+      HW6, 
+      HW7
+    ];
   return (
     <div className='container'>
       <div className="content-left">
         <h2 className='home'>Safety Car</h2>
         <div className="frame">
-          <img src="https://hips.hearstapps.com/countryliving.cdnds.net/17/47/2048x1365/gallery-1511194376-cavachon-puppy-christmas.jpg?resize=980:*" alt="my-profile" />
+        <div>
+        <Slide easing="ease">
+          <div className="each-slide">
+            <div style={{'backgroundImage': `url(${slideImages[0]})`}}>
+            </div>
+          </div>
+          <div className="each-slide">
+            <div style={{'backgroundImage': `url(${slideImages[1]})`}}>
+            </div>
+          </div>
+          <div className="each-slide">
+            <div style={{'backgroundImage': `url(${slideImages[2]})`}}>
+            </div>
+          </div>
+        </Slide>
+      </div>
         </div>
         <div className='box'>
           <Link to="/Status"><h3>Get more Info</h3></Link>
