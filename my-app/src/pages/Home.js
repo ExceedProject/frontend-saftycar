@@ -52,18 +52,11 @@ const Home = () => {
         <div className="frame">
         <div>
         <Slide easing="ease">
-          <div className="each-slide">
-            <div style={{'backgroundImage': `url(${slideImages[0]})`}}>
+            {slideImages.map((item,index)=>  
+            <div className="each-slide" key={index}>
+            <div style={{'backgroundImage': `url(${item})`}}>
             </div>
-          </div>
-          <div className="each-slide">
-            <div style={{'backgroundImage': `url(${slideImages[1]})`}}>
-            </div>
-          </div>
-          <div className="each-slide">
-            <div style={{'backgroundImage': `url(${slideImages[2]})`}}>
-            </div>
-          </div>
+          </div>)}
         </Slide>
       </div>
         </div>

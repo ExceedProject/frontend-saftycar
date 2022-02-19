@@ -73,8 +73,6 @@ const Status = ()=>  {
             <div style={{'backgroundImage': `url(${item})`}}>
             </div>
           </div>)}
-
-          
         </Slide>
       </div>
 
