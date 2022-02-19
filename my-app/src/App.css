@@ -55,12 +55,14 @@ nav h3:hover {
 
 .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   position: relative;
   width: 80vw;
   height: 100vh;
   padding: 40px;
   margin: 0 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .home {

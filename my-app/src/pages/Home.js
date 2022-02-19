@@ -1,8 +1,32 @@
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from "axios"
+import { LineChart, Line, XAxis, YAxis, CartesianGrid } from 'recharts'
+import moment from 'moment'
 import { Link } from 'react-router-dom'
 
 const Home = () => {
+  
+  const [graphData, setGraphData] = useState([]);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      getData().then((data) => {
+        setGraphData(data)
+      }).catch(console.log)
+    }, 3000);
+    return () => clearInterval(interval);
+ 
+  }, [])
+    const dateFormatter = date => {
+      return moment(date).format('DD/MM/YY HH:mm');
+    }
+  
+  
+    async function getData() {
+      const res = await axios.get('https://ecourse.cpe.ku.ac.th/exceed16/api/safety-car/graph')
+      return res.data
+    }
+
   return (
     <div className='container'>
       <div className="content-left">
@@ -16,9 +40,25 @@ const Home = () => {
         </div>
       </div>
       <div className="content-right"> 
-        <div className="frame2">
-          <img src="https://www.researchgate.net/publication/333561136/figure/fig1/AS:774809180991488@1561740312049/Graph-of-the-Dunning-Kruger-effect-on-the-confidence-of-medical-students-in-their.png" alt="my-profile" />
-        </div>
+     
+
+      <div className='carbon-graph'>
+        <div className='carbon-label'>Carbon and Heat Monoxide Graph</div>
+       
+        <LineChart width={500} height={300} data={graphData}> 
+        <XAxis
+            dataKey="time"
+            tickFormatter={dateFormatter}
+        />
+        <YAxis />
+        <CartesianGrid stroke="#ccc" />
+        <Line type="monotone" dataKey="carbon" stroke="#8884d8" strokeWidth={3} />
+        <Line type="monotone" dataKey="heat" stroke="#fd123f" strokeWidth={3} />
+        </LineChart>
+     
+    
+    </div>
+   
         <div className='why'>
         <h4>Why we do this?</h4>
           <p>
