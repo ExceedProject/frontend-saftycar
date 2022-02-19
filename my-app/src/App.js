@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar"
 import Graph from "./pages/Graph"
 import Home from "./pages/Home"
 import Info from "./pages/Info"
+import Status from './pages/Status';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/Graph" element={<Graph />} />
           <Route path="/" element={<Home />} />
           <Route path="/Info" element={<Info />} />
+          <Route path="/Status" element={<Status />} /> 
         </Routes>
     </BrowserRouter>
   );
