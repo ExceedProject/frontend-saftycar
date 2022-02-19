@@ -76,9 +76,9 @@ const Status = ()=>  {
         </Slide>
       </div>
 
- <      div className="upper" style={{marginLeft:200}}>   
-            <h1>Status</h1>
-            <div className="showstatus">
+    <div style={{marginLeft:200}}>   
+            <center><h1>Status</h1></center>
+            <div className="why">
                 <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
                   <h1>CO :</h1><div className="circle" style={{backgroundColor: Statusdata["carbon_color"],width:20,height:20,borderRadius:'50%'}}/>  
                 </div>
@@ -88,7 +88,9 @@ const Status = ()=>  {
             <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
                 <h1>Motion Detect :</h1><div className="circle" style={{backgroundColor: Statusdata["sensor_color"],width:20,height:20,borderRadius:'50%'}}/>
              </div>
-            <div style={{display:'flex',alignItems:'center',justifyContent:'space-between', padding:80}}>
+             </div>
+             <div className='why' style={{height: 80,padding:15,marginTop:24}}>
+            <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
                 <h1>Safe: </h1><div className="circle" style={{backgroundColor: Safecheck["warning_color"],width:20,height:20,borderRadius:'50%'}}/>
             </div>
         </div>
