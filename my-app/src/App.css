@@ -11,8 +11,6 @@ body {
 
 body {
   background-color: antiquewhite;
-  min-height: 100vh;
-  display: flex;
   flex-direction: column;
   align-items: center;
 }
@@ -27,9 +25,78 @@ h1 {
 nav {
   background-color: orange;
   display: flex;
-  height: 70px;
+  height: 100px;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
-  width: 100vw;
   padding: 8px 12px;
+}
+
+.content-right {
+  padding: 40px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 80vw;
+  padding: 40px;
+  margin: 0 auto;
+}
+
+.home {
+  padding-top: 40px;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+}
+
+.frame {
+  position: relative;
+  overflow: hidden;
+  width: 300px;
+  height: 300px;
+  margin-right: 50px;
+}
+
+.frame img {
+  position: relative;
+  width: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.frame2 {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin-right: 50px;
+}
+
+.frame2 img {
+  position: relative;
+  width: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.box {
+  padding: 8px;
+  width: 300px;
+  border: 1px solid black;
+  background-color: beige;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.why {
+  padding: 8px;
+  width: 500px;
+  overflow: hidden;
+  border: 1px solid black;
+  background-color: beige;
+  border-radius: 8px;
 }
